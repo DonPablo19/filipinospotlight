@@ -17,6 +17,7 @@ interface RelatedArticle {
   category: string;
   readTime: number;
   date: string;
+  url: string;
 }
 
 interface RelatedArticlesProps {
@@ -28,50 +29,54 @@ const RelatedArticles = ({
   articles = [
     {
       id: "1",
-      title: "Understanding the Impact of Climate Change on Global Agriculture",
+      title: "'Tumataya na sila sa llamado': Senate archive vote has 2028 implications - analyst",
       description:
-        "New research reveals how changing weather patterns are affecting crop yields worldwide.",
+        "A political analyst believes senators who voted to archive the impeachment complaint against Vice President Sara Duterte may have already made up their minds on who they will back in the 2028 presidential election.",
       image:
-        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-      category: "Environment",
-      readTime: 5,
-      date: "May 15, 2023",
+        "https://i.ytimg.com/vi/adLaCd9sX9I/mqdefault.jpg",
+      category: "Nation",
+      readTime: 4,
+      date: "Aug 11, 2025",
+      url:"https://www.abs-cbn.com/news/nation/2025/8/8/refiling-of-impeachment-complaint-against-sara-duterte-in-feb-2026-possible-lawmaker-says-1843",
     },
     {
       id: "2",
-      title: "Tech Giants Announce New Collaboration on AI Ethics",
+      title: "'Senate's not your playground': Escudero calls out Sotto for 'backing' House pursuits",
       description:
-        "Major technology companies form coalition to establish standards for responsible AI development.",
+        "MANILA — Senate President Francis 'Chiz' Escudero on Monday flagged Senate Minority Leader Vicente 'Tito' Sotto III for supposedly backing the alleged push for a new Charter change by Speaker Martin Romualdez and the House of Representatives.",
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
-      category: "Technology",
-      readTime: 4,
-      date: "May 12, 2023",
+        "https://od2-image-api.abs-cbn.com/prod/editorImage/1754885548882cropped-Screen%20Shot%202025-08-11%20at%2012.11.02%20PM.png",
+      category: "Nation",
+      readTime: 3,
+      date: "Aug 11, 2025",
+      url:"https://www.abs-cbn.com/news/nation/2025/8/11/-senate-s-not-your-playground-escudero-calls-out-sotto-for-backing-house-pursuits-1226",
     },
     {
       id: "3",
-      title: "Global Economic Forum Addresses Post-Pandemic Recovery",
+      title: "WRAP: ‘No cost’ Metro Manila flood solution raises question of hidden price tags",
       description:
-        "World leaders gather to discuss strategies for sustainable economic growth.",
+        "MANILA — Billionaire Ramon Ang, chairman of San Miguel Corp., announced this week that he and his conglomerate are volunteering to solve Metro Manila’s flooding, an announcement met with applause by mayors and officials at the event.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      category: "Economy",
+        "https://od2-image-api.abs-cbn.com/prod/20250810100848/d35005b9603517656190c789a773661047c09a0f3bef8efbf1535f71eb1a638b.png?w=306&h=204",
+      category: "Nation",
       readTime: 6,
-      date: "May 10, 2023",
+      date: "Aug 10, 2025",
+      url:"https://www.abs-cbn.com/news/nation/2025/8/10/-no-cost-metro-manila-flood-solution-raises-question-of-hidden-price-tags-2004",
     },
     {
       id: "4",
-      title: "Breakthrough in Renewable Energy Storage Technology",
+      title: "House bill seeks to prioritize on-site, in-city, and near-city resettlement",
       description:
-        "Scientists develop new battery technology that could revolutionize clean energy adoption.",
+        "MANILA — A House bill has been filed seeking to institutionalize a policy for on-site, in-city or near-city resettlement for communities evicted from their homes.",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
-      category: "Science",
-      readTime: 3,
-      date: "May 8, 2023",
+        "https://od2-image-api.abs-cbn.com/prod/editorImage/175481096796720230810-cbd-skyline-shanties-MD-6.jpg",
+      category: "Nation",
+      readTime: 4,
+      date: "Aug 10, 2025",
+      url:"https://www.abs-cbn.com/news/nation/2025/8/10/house-bill-seeks-to-prioritize-on-site-in-city-and-near-city-resettlement-1604",
     },
   ],
-  title = "Related Articles",
+  title = "Related News",
 }: RelatedArticlesProps) => {
   return (
     <section className="w-full py-12 bg-background">
@@ -81,7 +86,8 @@ const RelatedArticles = ({
           {articles.map((article) => (
             <Card
               key={article.id}
-              className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow"
+              className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => window.open(article.url, '_blank')}
             >
               <div className="relative h-48 overflow-hidden">
                 <img

@@ -9,12 +9,11 @@ interface Post {
   title: string;
   category: string;
   imageUrl: string;
-  publishedAt: Date;
   author: {
     name: string;
-    avatarUrl: string;
   };
-}
+  url: string;
+  }
 
 interface LatestPostsSidebarProps {
   posts?: Post[];
@@ -25,12 +24,13 @@ const LatestPostsSidebar = ({
 }: LatestPostsSidebarProps) => {
   return (
     <div className="w-full bg-background p-4 rounded-lg border">
-      <h2 className="text-xl font-bold mb-4">Latest Posts</h2>
+      <h2 className="text-xl font-bold mb-4">Latest News</h2>
       <div className="space-y-4">
         {posts.map((post) => (
           <Card
             key={post.id}
-            className="overflow-hidden hover:shadow-md transition-shadow"
+            className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+            onClick={() => window.open(post.url, '_blank')}
           >
             <div className="relative">
               <img
@@ -46,22 +46,11 @@ const LatestPostsSidebar = ({
               <h3 className="font-medium line-clamp-2 mb-2">{post.title}</h3>
               <div className="flex items-center justify-between text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <Avatar className="h-6 w-6">
-                    <AvatarImage
-                      src={post.author?.avatarUrl}
-                      alt={post.author?.name || "Author"}
-                    />
-                    <AvatarFallback>
-                      {post.author?.name?.charAt(0) || "A"}
-                    </AvatarFallback>
-                  </Avatar>
                   <span className="truncate">
                     {post.author?.name || "Anonymous"}
                   </span>
                 </div>
-                <span>
-                  {formatDistanceToNow(post.publishedAt, { addSuffix: true })}
-                </span>
+               
               </div>
             </CardContent>
           </Card>
@@ -74,64 +63,64 @@ const LatestPostsSidebar = ({
 const defaultPosts: Post[] = [
   {
     id: "1",
-    title: "Understanding the Impact of AI on Modern Journalism",
-    category: "Technology",
+    title: "15 contractors cornered P100-B worth of flood control projects since 2022: Marcos",
+    category: "Nation",
     imageUrl:
-      "https://images.unsplash.com/photo-1677442135136-760c813170d3?w=500&q=80",
-    publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 2), // 2 hours ago
+      "https://od2-image-api.abs-cbn.com/prod/editorImage/175487998219520250723-valenzuela-kadiwa-flooding-JC1371.jpg",
     author: {
-      name: "Sarah Johnson",
-      avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
+      name: "ABS-CBN News",
     },
+    url:"https://www.abs-cbn.com/news/nation/2025/8/11/15-contractors-cornered-p100-b-worth-of-flood-control-projects-since-2022-marcos-1053",
   },
   {
     id: "2",
-    title:
-      "Climate Change: New Study Reveals Accelerated Impact on Coastal Regions",
-    category: "Environment",
+    title: "Education budget for 2026 to reach 4 percent of GDP: Gatchalian",
+    category: "Nation",
     imageUrl:
-      "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=500&q=80",
-    publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 8), // 8 hours ago
+      "https://od2-image-api.abs-cbn.com/prod/editorImage/175488191530020240112-catch-up%20friday-pinyahan-elementary-school-MT-15.jpg",
+
     author: {
-      name: "Michael Chen",
-      avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
-    },
+      name: "ABS-CBN News",
+      },
+      url:"https://www.abs-cbn.com/news/nation/2025/8/11/education-budget-for-2026-to-reach-4-percent-of-gdp-lawmaker-1240",
   },
   {
     id: "3",
-    title: "Global Markets React to New Economic Policies",
-    category: "Finance",
+    title: "Diesel, kerosene prices drop big in 2nd week of August",
+    category: "Business",
     imageUrl:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80",
-    publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 24), // 1 day ago
+      "https://od2-image-api.abs-cbn.com/prod/20250811020816/01dc3811b94d19002233e940855150e98088b443fb07b1e60bc14693b1079839.jpg?w=306&h=204",
+
     author: {
-      name: "Elena Rodriguez",
-      avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=elena",
+      name: "ABS-CBN News",
     },
+    url:"https://www.abs-cbn.com/news/business/2025/8/11/diesel-kerosene-prices-drop-big-in-2nd-week-of-august-0938",
   },
   {
     id: "4",
-    title: "The Rise of Remote Work: How Companies Are Adapting",
-    category: "Business",
+    title: "'Sumbong sa Pangulo': Marcos launches website to seek public help in auditing flood control projects",
+    category: "Nation",
     imageUrl:
-      "https://images.unsplash.com/photo-1584931423298-c576fda54bd2?w=500&q=80",
-    publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 36), // 1.5 days ago
+      "https://od2-image-api.abs-cbn.com/prod/editorImage/175487369203220250804-marcos-india-visit-departure-PCO-4.jpg",
+
     author: {
-      name: "David Wilson",
-      avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=david",
+      name: "ABS-CBN News",
+      
     },
+    url:"https://www.abs-cbn.com/news/nation/2025/8/11/marcos-launches-website-to-seek-public-help-in-auditing-flood-control-projects-0923",
   },
   {
     id: "5",
-    title: "New Breakthrough in Renewable Energy Storage",
-    category: "Science",
+    title: "PBB Collab Edition housemates reunite in 'The Big ColLove'",
+    category: "Events",
     imageUrl:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=80",
-    publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 48), // 2 days ago
+      "https://od2-image-api.abs-cbn.com/prod/editorImage/1754845397627viber_image_2025-08-11_00-51-07-324.jpg",
+
     author: {
-      name: "Priya Patel",
-      avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
+      name: "ABS-CBN News",
+      
     },
+    url:"https://www.abs-cbn.com/entertainment/showbiz/events/2025/8/10/pbb-collab-edition-housemates-reunite-in-the-big-collove-0114",
   },
 ];
 
