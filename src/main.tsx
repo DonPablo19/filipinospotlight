@@ -1,18 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import App from './App.tsx'
+import ArticlePage from './pages/ArticlePage.tsx'
+import './index.css'
 
-import { TempoDevtools } from "tempo-devtools";
-TempoDevtools.init();
-
-const basename = import.meta.env.BASE_URL;
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
-      <App />
-    </BrowserRouter>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<ArticlePage />} />
+        <Route path="/philippine-police-chief-tracker-teams-on-standby-to-rearrest-freed-convicts" element={<ArticlePage />} />
+      </Routes>
+    </HashRouter>
   </React.StrictMode>,
-);
+)

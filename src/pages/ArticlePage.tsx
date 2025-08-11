@@ -1,172 +1,103 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
-import ArticleContent from "@/components/ArticleContent";
-import LatestPostsSidebar from "@/components/LatestPostsSidebar";
-import RelatedArticles from "@/components/RelatedArticles";
+import ArticleContent from "../components/ArticleContent";
+import LatestPostsSidebar from "../components/LatestPostsSidebar";
+import RelatedArticles from "../components/RelatedArticles";
 
 const ArticlePage = () => {
-  // Mock article data
-  const article = {
-    title: "The Future of Renewable Energy: Innovations and Challenges",
-    description:
-      "An in-depth look at the latest developments in renewable energy technology and the obstacles that still need to be overcome for widespread adoption.",
-    publishedDate: "May 15, 2023",
-    publishedTime: "10:30 AM",
-    readTime: "8 min read",
-    content: `<p>Renewable energy has come a long way in the past decade. With advancements in solar, wind, and hydroelectric technologies, we're seeing unprecedented growth in clean energy adoption worldwide.</p>
-      <p>Solar panel efficiency has increased dramatically while costs have plummeted. Wind turbines are now larger and more efficient than ever before. And new innovations in energy storage are helping to solve the intermittency problem that has long plagued renewable sources.</p>
-      <h2>The Solar Revolution</h2>
-      <p>Perhaps the most dramatic transformation has occurred in the solar industry. Photovoltaic cells that once converted only a small percentage of sunlight into electricity now routinely achieve efficiency ratings above 20%. Meanwhile, the cost per watt has fallen by more than 70% since 2010.</p>
-      <p>This combination of higher efficiency and lower costs has made solar energy competitive with fossil fuels in many markets, even without subsidies. Large-scale solar farms are now common sights in sunny regions, while residential solar installations continue to grow exponentially.</p>
-      <h2>Wind Power Scales Up</h2>
-      <p>Wind energy has seen similar progress. Modern wind turbines now stand over 200 meters tall with blades longer than football fields. These massive structures can generate enough electricity to power thousands of homes from a single installation.</p>
-      <p>Offshore wind farms, once considered too expensive and technically challenging, are now being built at an accelerating pace. These installations take advantage of stronger, more consistent winds over open water, producing more reliable power than their land-based counterparts.</p>
-      <h2>The Storage Challenge</h2>
-      <p>Despite these advances, one significant challenge remains: storage. Unlike fossil fuels, which can be burned on demand, renewable energy is often produced when it's not immediately needed. Solving this mismatch between supply and demand is critical for renewables to fully replace conventional power sources.</p>
-      <p>Battery technology is improving rapidly, with lithium-ion batteries becoming more affordable and energy-dense. Alternative storage methods, such as pumped hydro, compressed air, and hydrogen production, are also being developed and deployed at scale.</p>
-      <h2>Looking Ahead</h2>
-      <p>The path to a fully renewable energy system still faces obstacles. Grid infrastructure needs updating, regulatory frameworks must evolve, and certain industries remain difficult to decarbonize. However, the momentum behind clean energy is now undeniable.</p>
-      <p>With continued innovation and investment, renewable energy has the potential to transform our relationship with electricity, reducing environmental impacts while providing affordable, reliable power to communities worldwide.</p>`,
-    author: {
-      name: "Dr. Sarah Chen",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
-      title: "Energy Policy Analyst",
-    },
-    image:
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80",
-  };
-
-  // Mock latest posts data
-  const latestPosts = [
-    {
-      id: "1",
-      title: "Global Climate Summit Reaches Historic Agreement",
-      category: "Environment",
-      imageUrl:
-        "https://images.unsplash.com/photo-1623177623442-558a6f63c891?w=400&q=80",
-      publishedAt: new Date("May 12, 2023"),
-      author: {
-        name: "John Smith",
-        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=john",
-      },
-    },
-    {
-      id: "2",
-      title: "New Study Shows Dramatic Decline in Arctic Ice",
-      category: "Science",
-      imageUrl:
-        "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?w=400&q=80",
-      publishedAt: new Date("May 10, 2023"),
-      author: {
-        name: "Emma Wilson",
-        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=emma",
-      },
-    },
-    {
-      id: "3",
-      title: "Electric Vehicle Sales Surpass Traditional Cars in Europe",
-      category: "Technology",
-      imageUrl:
-        "https://images.unsplash.com/photo-1593941707882-a5bba13938c9?w=400&q=80",
-      publishedAt: new Date("May 8, 2023"),
-      author: {
-        name: "Alex Johnson",
-        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=alex",
-      },
-    },
-    {
-      id: "4",
-      title: "Breakthrough in Sustainable Building Materials Announced",
-      category: "Innovation",
-      imageUrl:
-        "https://images.unsplash.com/photo-1518005068251-37900150dfca?w=400&q=80",
-      publishedAt: new Date("May 5, 2023"),
-      author: {
-        name: "Maria Garcia",
-        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=maria",
-      },
-    },
-  ];
-
-  // Mock related articles data
-  const relatedArticles = [
-    {
-      id: "1",
-      title: "How Community Solar Projects Are Changing Energy Access",
-      description:
-        "Local initiatives are making clean energy available to those previously left out of the solar revolution.",
-      image:
-        "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80",
-      date: "May 2, 2023",
-    },
-    {
-      id: "2",
-      title: "The Hidden Environmental Cost of Battery Production",
-      description:
-        "As demand for batteries soars, researchers are working to minimize the ecological impact of mining and manufacturing.",
-      image:
-        "https://images.unsplash.com/photo-1593941707882-a5bba13938c9?w=600&q=80",
-      date: "April 28, 2023",
-    },
-    {
-      id: "3",
-      title: "Geothermal Energy: The Overlooked Renewable Resource",
-      description:
-        "While solar and wind get the headlines, geothermal power offers reliable, constant energy with minimal environmental impact.",
-      image:
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80",
-      date: "April 22, 2023",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground py-4">
-        <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-bold">PHagenda News</h1>
-        </div>
-      </header>
-
-      {/* Main content */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Article content - takes up more space */}
-          <div className="lg:w-2/3">
-            <Card className="p-6 bg-card">
-              <ArticleContent
-                title={article.title}
-                description={article.description}
-                publishedDate={article.publishedDate}
-                publishedTime={article.publishedTime}
-                readTime={article.readTime}
-                content={article.content}
-                author={article.author}
-                image={article.image}
-              />
-            </Card>
-          </div>
-
-          {/* Sidebar - takes up less space */}
-          <div className="lg:w-1/3">
-            <Card className="p-6 bg-card sticky top-4">
-              <LatestPostsSidebar posts={latestPosts} />
-            </Card>
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation Header */}
+      <nav className="bg-white border-b shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-gray-900">Phagenda</h1>
+            </div>
           </div>
         </div>
+      </nav>
 
-        {/* Related articles section */}
-        <div className="mt-12">
-          <RelatedArticles articles={relatedArticles} />
+      {/* Main Content Area */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Main Article Content - Takes 3 columns */}
+          <div className="lg:col-span-3">
+            <ArticleContent />
+          </div>
+
+          {/* Sidebar - Takes 1 column */}
+          <div className="lg:col-span-1">
+            <LatestPostsSidebar />
+          </div>
         </div>
-      </main>
+      </div>
+
+      {/* Related Articles Section - Full width below */}
+      <RelatedArticles />
 
       {/* Footer */}
-      <footer className="bg-muted py-6 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © 2023 PHagenda News. All rights reserved.
-          </p>
+      <footer className="bg-gray-900 text-white mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Brand Section */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-2xl font-bold mb-4">Phagenda</h3>
+              <p className="text-gray-300 mb-4">
+                Your trusted source for breaking news, exclusive reports, and in-depth coverage of the most important stories happening around the world. 
+                Stay informed with real-time updates and expert analysis.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-300 hover:text-white">
+                  <span className="sr-only">Twitter</span>
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-300 hover:text-white">
+                  <span className="sr-only">LinkedIn</span>
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.852-3.047-1.853 0-2.136 1.445-2.136 2.939v5.677H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><a href="/" className="text-gray-300 hover:text-white">Home</a></li>
+                <li><a href="/philippine-police-chief-tracker-teams-on-standby-to-rearrest-freed-convicts" className="text-gray-300 hover:text-white">News</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Categories</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Reporters</a></li>
+              </ul>
+            </div>
+
+            {/* Categories */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">News Categories</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-300 hover:text-white">Breaking News</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Technology</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Politics</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">World</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-300 text-sm">
+                © 2024 Phagenda. All rights reserved.
+              </p>
+              <div className="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" className="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
+                <a href="#" className="text-gray-300 hover:text-white text-sm">Terms of Service</a>
+                <a href="#" className="text-gray-300 hover:text-white text-sm">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

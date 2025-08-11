@@ -13,6 +13,10 @@ function Home() {
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-gray-900">Phagenda</h1>
             </div>
+            <div className="flex items-center space-x-6">
+              <a href="/" className="text-gray-700 hover:text-gray-900">Home</a>
+              <a href="/philippine-police-chief-tracker-teams-on-standby-to-rearrest-freed-convicts" className="text-gray-700 hover:text-gray-900">Article</a>
+            </div>
           </div>
         </div>
       </nav>
