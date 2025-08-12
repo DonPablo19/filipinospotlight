@@ -1,125 +1,175 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { formatDistanceToNow } from "date-fns";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 interface Post {
-  id: string;
+  id: number;
   title: string;
+  excerpt: string;
   category: string;
-  imageUrl: string;
+  readTime: string;
+  publishedDate: string;
   author: {
     name: string;
+    avatar: string;
   };
   url: string;
-  }
+}
 
 interface LatestPostsSidebarProps {
   posts?: Post[];
 }
 
 const LatestPostsSidebar = ({
-  posts = defaultPosts,
+  posts = [
+    {
+      id: 1,
+      title: "Marcos: 15 firms corner big flood control works",
+      excerpt: "MANILA, Philippines — As the investigation into nearly 10,000 flood control projects in the past three years gets underway, President Marcos on Monday expressed surprise upon learning that only a small number among the more than 2,000 contracting entities were handling the big-ticket projects of the government.",
+      category: "National",
+      readTime: "4 min read",
+      publishedDate: "August 12, 2025",
+      author: {
+        name: "INQUIRER.net",
+        avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
+      },
+              url: "https://newsinfo.inquirer.net/2094388/marcos-15-firms-corner-big-flood-control-works?utm_source=(direct)&utm_medium=gallery"
+    },
+    {
+      id: 2,
+      title: "‘Bad Boy’ Robin Padilla to head Senate ethics body?",
+      excerpt: "MANILA, Philippines — Sen. Robinhood “Robin” Padilla, who has been dubbed the “Bad Boy” of Philippine cinema, is being considered to head the Senate committee on ethics.",
+      category: "National",
+      readTime: "5 min read",
+      publishedDate: "August 12, 2025",
+      author: {
+        name: "INQUIRER.net",
+        avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
+      },
+             url: "https://newsinfo.inquirer.net/2094387/bad-boy-robin-padilla-to-head-senate-ethics-body?utm_source=(direct)&utm_medium=gallery"
+    },
+    {
+      id: 3,
+      title: "Chinese ships collide while pursuing PH vessel",
+      excerpt: "SAN ANTONIO, ZAMBALES, Philippines — Philippine vessels were again harassed by China during another mission on Monday to Panatag (Scarborough) Shoal in the West Philippine Sea (WPS).",
+      category: "National",
+      readTime: "3 min read",
+      publishedDate: "August 12, 2025",
+      author: {
+        name: "INQUIRER.net",
+        avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
+      },
+             url: "https://newsinfo.inquirer.net/2094242/marcos-inspects-pasig-marikina-river-channel-improvement-project?utm_source=(direct)&utm_medium=gallery"
+    },
+    {
+      id: 4,
+      title: "Vico Sotto: Discayas own 2 of top 15 firms in gov’t flood control deals",
+      excerpt: "MANILA, Philippines — Two of the top 15 contractor firms that received the majority of flood control projects from the government are owned by the Discayas, Pasig Mayor Vico Sotto said Monday as he vowed to identify any “red flags” related to these projects and forward the information to President Ferdinand Marcos Jr.",
+      category: "National",
+      readTime: "3 min read",
+      publishedDate: "August 12, 2025",
+      author: {
+        name: "INQUIRER.net",
+        avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
+      },
+      url: "https://newsinfo.inquirer.net/2094218/vico-sotto-discayas-own-2-of-top-15-firms-in-govt-flood-control-deals?utm_source=(direct)&utm_medium=gallery"
+    },
+    {
+      id: 5,
+      title: "Public urged to go to President’s website for tips on infra problems",
+      excerpt: "MANILA, Philippines — Got a tip about anomalies in the flood control projects in your community? Report it straight to President Marcos.",
+      category: "National",
+      readTime: "4 min read",
+      publishedDate: "August 12, 2025",
+      author: {
+        name: "INQUIRER.net",
+        avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
+      },
+      url: "https://newsinfo.inquirer.net/2094389/public-urged-to-go-to-presidents-website-for-tips-on-infra-problems",
+    }
+  ]
 }: LatestPostsSidebarProps) => {
   return (
-    <div className="w-full bg-white p-6 rounded-xl border border-gray-100 shadow-lg">
-      <div className="flex items-center space-x-3 mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">Latest News</h2>
+    <div className="space-y-6">
+      {/* Sidebar Header */}
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">
+          Latest Posts
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Stay updated with the latest developments in Philippine politics, economy, foreign relations, and current events from FILIPINO SPOTLIGHT.
+        </p>
       </div>
-      <div className="space-y-6">
+
+      {/* Latest Posts */}
+      <div className="space-y-4">
         {posts.map((post) => (
-          <Card
-            key={post.id}
-            className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-blue-200"
-            onClick={() => window.open(post.url, '_blank')}
-          >
-            <div className="relative">
-              <img
-                src={post.imageUrl}
-                alt={post.title}
-                className="w-full h-32 object-cover transition-transform hover:scale-105 duration-300"
-              />
-              <Badge variant="secondary" className="absolute top-2 left-2 bg-blue-600 text-white border-0 hover:bg-blue-700">
-                {post.category}
-              </Badge>
-            </div>
+          <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
             <CardContent className="p-4">
-              <h3 className="font-semibold line-clamp-2 mb-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 leading-tight">
+              <div className="flex items-center gap-2 mb-3">
+                                  <Badge variant="secondary" className="text-xs font-medium bg-pink-100 text-pink-800 hover:bg-pink-200">
+                  {post.category}
+                </Badge>
+              </div>
+              
+                              <h4 className="text-sm font-semibold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors duration-200 line-clamp-2 leading-tight">
                 {post.title}
-              </h3>
-              <div className="flex items-center justify-between text-sm text-gray-500">
+              </h4>
+              
+              <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">
+                {post.excerpt}
+              </p>
+              
+              <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="truncate font-medium text-blue-600">
-                    {post.author?.name || "Bayan Today"}
+                  <Avatar className="w-6 h-6">
+                    <AvatarImage src={post.author.avatar} alt={post.author.name} />
+                    <AvatarFallback className="text-xs bg-pink-100 text-pink-800">
+                      {post.author.name.charAt(0)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <span className="text-xs text-gray-500 font-medium">
+                    {post.author.name}
                   </span>
                 </div>
+                <span className="text-xs text-gray-400">
+                  {post.readTime}
+                </span>
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-gray-400">
+                  {post.publishedDate}
+                </span>
+                <a 
+                  href={post.url}
+                  className="text-xs text-pink-600 hover:text-pink-800 font-medium transition-colors duration-200"
+                >
+                  Read More →
+                </a>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
+
+      {/* Newsletter Signup */}
+      <Card className="bg-gradient-to-br from-pink-600 to-red-600 text-white border-0 shadow-lg">
+        <CardContent className="p-6">
+          <h4 className="text-lg font-bold mb-2">
+            Stay Informed
+          </h4>
+          <p className="text-pink-100 text-sm mb-4">
+            Get the latest Philippine news and police updates from FILIPINO SPOTLIGHT delivered to your inbox.
+          </p>
+          <button className="w-full bg-white text-pink-600 font-semibold py-2 px-4 rounded-lg hover:bg-pink-50 transition-colors duration-200">
+            Subscribe Now
+          </button>
+        </CardContent>
+      </Card>
     </div>
   );
 };
-
-const defaultPosts: Post[] = [
-  {
-    id: "1",
-    title: "Marcos: 15 contractors got 20% of P545-billion flood control contracts",
-    category: "Nation",
-    imageUrl:
-      "https://images.gmanews.tv/webpics/2025/08/listoffloodcontrolpprojects_2025_08_11_13_54_00.jpg",
-    author: {
-      name: "GMA News",
-    },
-    url:"https://www.gmanetwork.com/news/topstories/nation/955471/list-15-contractors-with-most-flood-control-projects/story/",
-  },
-  {
-    id: "2",
-    title: "Gorio intensifies into typhoon; Habagat to bring cloudy skies, rains over most of PH",
-    category: "Weather",
-    imageUrl:
-      "https://images.gmanews.tv/webpics/2025/08/Gorio_as_of_5am,_Tuesday_August_12,_2025_2025_08_12_05_33_43.jpg",
-    author: {
-      name: "GMA News",
-      },
-      url:"https://www.gmanetwork.com/news/scitech/weather/955565/gorio-intensifies-into-typhoon-habagat-to-bring-cloudy-skies-rains-over-most-of-ph/story/",
-  },
-  {
-    id: "3",
-    title: "BSP chief Remolona wants online gambling beyond reach of ayuda beneficiaries",
-    category: "Business",
-    imageUrl:"https://images.gmanews.tv/webpics/2025/07/bsp_gov_eli_remolona_jr_2025_07_03_17_48_57.jpg",
-    author: {
-      name: "GMA News",
-    },
-    url:"https://www.gmanetwork.com/news/money/economy/955505/bsp-chief-remolona-online-gambling-inaccessible-to-ayuda-beneficiaries/story/",
-  },
-  {
-    id: "4",
-    title: "Student kills teacher over 'failing grade' in Lanao Del Sur",
-    category: "Nation",
-    imageUrl:
-      "https://www.rappler.com/tachyon/2025/08/Teachers-call-stronger-security-Lanao-del-sur-shooting-August-11-2025.jpg?resize=1280%2C720&zoom=1",
-    author: {
-      name: "GMA News",
-      
-    },
-    url:"https://www.gmanetwork.com/news/topstories/regions/955550/student-kills-teacher-over-failing-grades-in-lanao-del-sur/story/",
-  },
-  {
-    id: "5",
-    title: "Suspended chief says GSIS’ billions-worth of investments have yielded gains",
-    category: "Business",
-    imageUrl:
-      "https://mb.com.ph/manilabulletin/uploads/images/2025/07/25/29452.webp",
-    author: {
-      name: "GMA News",
-      
-    },
-    url:"https://www.gmanetwork.com/news/money/companies/955520/suspended-chief-says-gsis-billions-worth-of-investments-have-yielded-gains/story/",
-  },
-];
 
 export default LatestPostsSidebar;

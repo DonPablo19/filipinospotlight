@@ -9,9 +9,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/pnp-chief-albayalde-urges-public-to-move-on-from-ninja-cops-controversy" replace />} />
-        <Route path="/philippine-police-chief-tracker-teams-on-standby-to-rearrest-freed-convicts" element={<Navigate to="/pnp-chief-albayalde-urges-public-to-move-on-from-ninja-cops-controversy" replace />} />
-        <Route path="/pnp-chief-albayalde-urges-public-to-move-on-from-ninja-cops-controversy" element={<ArticlePage />} />
+        <Route path="/" element={<Navigate to="/albayalde-vowed-police-reforms-in-training-institute-launch" replace />} />
+        <Route path="/albayalde-vowed-police-reforms-in-training-institute-launch" element={<ArticlePage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

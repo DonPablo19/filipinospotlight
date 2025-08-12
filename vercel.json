@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/pnp-chief-albayalde-urges-public-to-move-on-from-ninja-cops-controversy",
+      "source": "/albayalde-vowed-police-reforms-in-training-institute-launch",
       "destination": "/index.html"
     },
     {
@@ -12,7 +12,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/pnp-chief-albayalde-urges-public-to-move-on-from-ninja-cops-controversy",
+      "destination": "/albayalde-vowed-police-reforms-in-training-institute-launch",
       "permanent": false
     }
   ],
