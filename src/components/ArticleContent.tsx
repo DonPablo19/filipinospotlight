@@ -20,9 +20,18 @@ const ArticleContent = ({
 
 <p class="mb-6">During the ceremony of the the formal turnover happened at Camp Gen. Vicente Lim, the PNP Chief emphasized that assuming full control over training institutions was necessary to address the existing issues in the conduct and operations of the police force.</p>
 
+<div class=" rounded-lg p-4 text-center my-8">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mZPtWcQeowsXVv9h-_s59FT5m06VwIwOTg&s" alt="Advertisement 1" class="w-96 h-48 mx-auto" />
+  <p class="text-sm text-gray-500 mt-2">Advertisement</p>
+</div>
+
 <p class="mb-6">Albayalde argued the transfer would empower the organization to implement meaningful reforms through standardized instruction by active-duty and veteran PNP personnel thus fostering discipline, morality, and competence among new recruits and in-service officers.</p>
 
 <p class="mb-6">He had a consistent message discipline, echoing earlier promises following his assumption as PNP Chief in April 2018. He promised a nationwide implementation of the strict enforcement style he championed as former NCRPO Chief. As part of it are intensified surprise inspections, swift dismissals, and zero tolerance for off duty misconduct for internal cleansing across the 190,000 police force.</p>
+<div class=" rounded-lg p-4 text-center my-8">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-0H1t3rOAyrJ5F6Dy2_WRpDF0j4J6ppJ_Ig&s" alt="Advertisement 1" class="w-96 h-48 mx-auto" />
+  <p class="text-sm text-gray-500 mt-2">Advertisement</p>
+</div>
 
 <p class="mb-6">The endeavor was to directly oversee police training as a strategic solution to systemic corruption, with calls for accountability rooted in command responsibility down to precinct level. He maintained that grounding officers in ethics from the outset was critical to transform the culture of policing.</p>
 
