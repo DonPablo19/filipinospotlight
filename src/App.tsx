@@ -8,7 +8,7 @@ function App() {
     <Suspense fallback={<p>Loading...</p>}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/article" element={<ArticlePage />} />
+        <Route path="/pnp-chief-albayalde-urges-public-to-move-on-from-ninja-cops-controversy" element={<ArticlePage />} />
       </Routes>
     </Suspense>
   );

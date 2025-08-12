@@ -23,34 +23,37 @@ const LatestPostsSidebar = ({
   posts = defaultPosts,
 }: LatestPostsSidebarProps) => {
   return (
-    <div className="w-full bg-background p-4 rounded-lg border">
-      <h2 className="text-xl font-bold mb-4">Latest News</h2>
-      <div className="space-y-4">
+    <div className="w-full bg-white p-6 rounded-xl border border-gray-100 shadow-lg">
+      <div className="flex items-center space-x-3 mb-6">
+        <h2 className="text-2xl font-bold text-gray-900">Latest News</h2>
+      </div>
+      <div className="space-y-6">
         {posts.map((post) => (
           <Card
             key={post.id}
-            className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+            className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-blue-200"
             onClick={() => window.open(post.url, '_blank')}
           >
             <div className="relative">
               <img
                 src={post.imageUrl}
                 alt={post.title}
-                className="w-full h-32 object-cover"
+                className="w-full h-32 object-cover transition-transform hover:scale-105 duration-300"
               />
-              <Badge variant="secondary" className="absolute top-2 left-2">
+              <Badge variant="secondary" className="absolute top-2 left-2 bg-blue-600 text-white border-0 hover:bg-blue-700">
                 {post.category}
               </Badge>
             </div>
-            <CardContent className="p-3">
-              <h3 className="font-medium line-clamp-2 mb-2">{post.title}</h3>
-              <div className="flex items-center justify-between text-sm text-muted-foreground">
+            <CardContent className="p-4">
+              <h3 className="font-semibold line-clamp-2 mb-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 leading-tight">
+                {post.title}
+              </h3>
+              <div className="flex items-center justify-between text-sm text-gray-500">
                 <div className="flex items-center gap-2">
-                  <span className="truncate">
-                    {post.author?.name || "Anonymous"}
+                  <span className="truncate font-medium text-blue-600">
+                    {post.author?.name || "Bayan Today"}
                   </span>
                 </div>
-               
               </div>
             </CardContent>
           </Card>
@@ -63,64 +66,59 @@ const LatestPostsSidebar = ({
 const defaultPosts: Post[] = [
   {
     id: "1",
-    title: "15 contractors cornered P100-B worth of flood control projects since 2022: Marcos",
+    title: "Marcos: 15 contractors got 20% of P545-billion flood control contracts",
     category: "Nation",
     imageUrl:
-      "https://od2-image-api.abs-cbn.com/prod/editorImage/175487998219520250723-valenzuela-kadiwa-flooding-JC1371.jpg",
+      "https://images.gmanews.tv/webpics/2025/08/listoffloodcontrolpprojects_2025_08_11_13_54_00.jpg",
     author: {
-      name: "ABS-CBN News",
+      name: "GMA News",
     },
-    url:"https://www.abs-cbn.com/news/nation/2025/8/11/15-contractors-cornered-p100-b-worth-of-flood-control-projects-since-2022-marcos-1053",
+    url:"https://www.gmanetwork.com/news/topstories/nation/955471/list-15-contractors-with-most-flood-control-projects/story/",
   },
   {
     id: "2",
-    title: "Education budget for 2026 to reach 4 percent of GDP: Gatchalian",
-    category: "Nation",
+    title: "Gorio intensifies into typhoon; Habagat to bring cloudy skies, rains over most of PH",
+    category: "Weather",
     imageUrl:
-      "https://od2-image-api.abs-cbn.com/prod/editorImage/175488191530020240112-catch-up%20friday-pinyahan-elementary-school-MT-15.jpg",
-
+      "https://images.gmanews.tv/webpics/2025/08/Gorio_as_of_5am,_Tuesday_August_12,_2025_2025_08_12_05_33_43.jpg",
     author: {
-      name: "ABS-CBN News",
+      name: "GMA News",
       },
-      url:"https://www.abs-cbn.com/news/nation/2025/8/11/education-budget-for-2026-to-reach-4-percent-of-gdp-lawmaker-1240",
+      url:"https://www.gmanetwork.com/news/scitech/weather/955565/gorio-intensifies-into-typhoon-habagat-to-bring-cloudy-skies-rains-over-most-of-ph/story/",
   },
   {
     id: "3",
-    title: "Diesel, kerosene prices drop big in 2nd week of August",
+    title: "BSP chief Remolona wants online gambling beyond reach of ayuda beneficiaries",
     category: "Business",
-    imageUrl:
-      "https://od2-image-api.abs-cbn.com/prod/20250811020816/01dc3811b94d19002233e940855150e98088b443fb07b1e60bc14693b1079839.jpg?w=306&h=204",
-
+    imageUrl:"https://images.gmanews.tv/webpics/2025/07/bsp_gov_eli_remolona_jr_2025_07_03_17_48_57.jpg",
     author: {
-      name: "ABS-CBN News",
+      name: "GMA News",
     },
-    url:"https://www.abs-cbn.com/news/business/2025/8/11/diesel-kerosene-prices-drop-big-in-2nd-week-of-august-0938",
+    url:"https://www.gmanetwork.com/news/money/economy/955505/bsp-chief-remolona-online-gambling-inaccessible-to-ayuda-beneficiaries/story/",
   },
   {
     id: "4",
-    title: "'Sumbong sa Pangulo': Marcos launches website to seek public help in auditing flood control projects",
+    title: "Student kills teacher over 'failing grade' in Lanao Del Sur",
     category: "Nation",
     imageUrl:
-      "https://od2-image-api.abs-cbn.com/prod/editorImage/175487369203220250804-marcos-india-visit-departure-PCO-4.jpg",
-
+      "https://www.rappler.com/tachyon/2025/08/Teachers-call-stronger-security-Lanao-del-sur-shooting-August-11-2025.jpg?resize=1280%2C720&zoom=1",
     author: {
-      name: "ABS-CBN News",
+      name: "GMA News",
       
     },
-    url:"https://www.abs-cbn.com/news/nation/2025/8/11/marcos-launches-website-to-seek-public-help-in-auditing-flood-control-projects-0923",
+    url:"https://www.gmanetwork.com/news/topstories/regions/955550/student-kills-teacher-over-failing-grades-in-lanao-del-sur/story/",
   },
   {
     id: "5",
-    title: "PBB Collab Edition housemates reunite in 'The Big ColLove'",
-    category: "Events",
+    title: "Suspended chief says GSIS’ billions-worth of investments have yielded gains",
+    category: "Business",
     imageUrl:
-      "https://od2-image-api.abs-cbn.com/prod/editorImage/1754845397627viber_image_2025-08-11_00-51-07-324.jpg",
-
+      "https://mb.com.ph/manilabulletin/uploads/images/2025/07/25/29452.webp",
     author: {
-      name: "ABS-CBN News",
+      name: "GMA News",
       
     },
-    url:"https://www.abs-cbn.com/entertainment/showbiz/events/2025/8/10/pbb-collab-edition-housemates-reunite-in-the-big-collove-0114",
+    url:"https://www.gmanetwork.com/news/money/companies/955520/suspended-chief-says-gsis-billions-worth-of-investments-have-yielded-gains/story/",
   },
 ];
 

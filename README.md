@@ -1,30 +1,67 @@
-# React + TypeScript + Vite
+# Bayan Today
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Philippine news website built with React, TypeScript, and Tailwind CSS. Bayan Today provides comprehensive coverage of breaking news, exclusive reports, and in-depth analysis of the most important stories happening in the Philippines and around the world.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+- **TypeScript**: Full type safety and better development experience
+- **Latest News Sidebar**: Real-time updates on current events
+- **Related Articles**: Curated content recommendations
+- **Beautiful Typography**: Optimized for readability and user experience
+- **Enhanced Design**: Blue accent color scheme with modern gradients and hover effects
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Build Tool**: Vite
+- **Routing**: React Router DOM
+- **Icons**: Lucide React
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Build
+
+To build for production:
+
+```bash
+npm run build
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Current Coverage
+
+The website currently features coverage of:
+- Philippine National Police (PNP) news and developments
+- Government and political updates
+- Law enforcement and public safety
+- National security and crime prevention
+- Public opinion and social issues
+
+## Design Features
+
+- **Blue Gradient Navigation**: Modern header with blue gradient and "BT" logo
+- **Enhanced Cards**: Improved shadows, hover effects, and blue accent colors
+- **Responsive Layout**: Optimized for all screen sizes
+- **Smooth Transitions**: Hover animations and smooth color transitions
+- **Professional Typography**: Clear hierarchy and improved readability
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.

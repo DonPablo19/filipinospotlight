@@ -29,64 +29,67 @@ const RelatedArticles = ({
   articles = [
     {
       id: "1",
-      title: "'Tumataya na sila sa llamado': Senate archive vote has 2028 implications - analyst",
+      title: "Sara Duterte sees cuts in proposed P903-million OVP budget",
       description:
-        "A political analyst believes senators who voted to archive the impeachment complaint against Vice President Sara Duterte may have already made up their minds on who they will back in the 2028 presidential election.",
+        "Vice President Sara Duterte said that she expected the proposed P903 million budget of the Office of the Vice President for 2026 to be reduced when the General Appropriations Act is passed.",
       image:
-        "https://i.ytimg.com/vi/adLaCd9sX9I/mqdefault.jpg",
+        "https://images.gmanews.tv/webpics/2025/08/Screenshot_2025-08-07_at_8_2025_08_07_20_55_47.png",
       category: "Nation",
       readTime: 4,
-      date: "Aug 11, 2025",
-      url:"https://www.abs-cbn.com/news/nation/2025/8/8/refiling-of-impeachment-complaint-against-sara-duterte-in-feb-2026-possible-lawmaker-says-1843",
+      date: "August 12, 2025",
+      url:"https://www.gmanetwork.com/news/topstories/nation/955554/sara-duterte-ovp-budget-p903-million-reduction/story/",
     },
     {
       id: "2",
-      title: "'Senate's not your playground': Escudero calls out Sotto for 'backing' House pursuits",
+      title: "Bus conductor cut in half after getting hit by car, truck in Cavite",
       description:
-        "MANILA — Senate President Francis 'Chiz' Escudero on Monday flagged Senate Minority Leader Vicente 'Tito' Sotto III for supposedly backing the alleged push for a new Charter change by Speaker Martin Romualdez and the House of Representatives.",
+        "The body of a bus conductor was cut in half after he was hit by a car and then a truck on Sunday morning in General Trias, Cavite.",
       image:
-        "https://od2-image-api.abs-cbn.com/prod/editorImage/1754885548882cropped-Screen%20Shot%202025-08-11%20at%2012.11.02%20PM.png",
+        "https://images.gmanews.tv/webpics/2025/08/Screenshot_2025-08-11_at_9_2025_08_11_21_33_25.png",
       category: "Nation",
-      readTime: 3,
-      date: "Aug 11, 2025",
-      url:"https://www.abs-cbn.com/news/nation/2025/8/11/-senate-s-not-your-playground-escudero-calls-out-sotto-for-backing-house-pursuits-1226",
+      readTime: 5,
+      date: "August 11, 2025",
+      url:"https://www.gmanetwork.com/news/topstories/nation/955535/bus-conductor-cut-in-half-after-getting-hit-by-car-truck-in-cavite/story/",
     },
     {
       id: "3",
-      title: "WRAP: ‘No cost’ Metro Manila flood solution raises question of hidden price tags",
+      title: "Lawmakers want names, accountability over flood control projects",
       description:
-        "MANILA — Billionaire Ramon Ang, chairman of San Miguel Corp., announced this week that he and his conglomerate are volunteering to solve Metro Manila’s flooding, an announcement met with applause by mayors and officials at the event.",
+        "Will contractors of anomalous government flood control projects face charges?",
       image:
-        "https://od2-image-api.abs-cbn.com/prod/20250810100848/d35005b9603517656190c789a773661047c09a0f3bef8efbf1535f71eb1a638b.png?w=306&h=204",
+        "https://images.gmanews.tv/webpics/2025/08/320_tinio_san_fernando_composite_2025_08_11_16_38_04.jpg",
       category: "Nation",
-      readTime: 6,
-      date: "Aug 10, 2025",
-      url:"https://www.abs-cbn.com/news/nation/2025/8/10/-no-cost-metro-manila-flood-solution-raises-question-of-hidden-price-tags-2004",
+      readTime: 3,
+      date: "August 11, 2025",
+      url:"https://www.gmanetwork.com/news/topstories/nation/955487/lawmakers-want-names-accountability-over-flood-control-projects/story/",
     },
     {
       id: "4",
-      title: "House bill seeks to prioritize on-site, in-city, and near-city resettlement",
+      title: "Schools urged to report bullying cases",
       description:
-        "MANILA — A House bill has been filed seeking to institutionalize a policy for on-site, in-city or near-city resettlement for communities evicted from their homes.",
+          "The Council for the Welfare of Children (CWC) on Monday urged schools to report bullying cases to authorities as the implementing rules and regulations of the Anti-Bullying Act mandates educational institutions to respond promptly on such cases.",
       image:
-        "https://od2-image-api.abs-cbn.com/prod/editorImage/175481096796720230810-cbd-skyline-shanties-MD-6.jpg",
+        "https://images.gmanews.tv/webpics/2022/10/reeltime5_2022_10_25_19_16_26.jpg",
       category: "Nation",
       readTime: 4,
-      date: "Aug 10, 2025",
-      url:"https://www.abs-cbn.com/news/nation/2025/8/10/house-bill-seeks-to-prioritize-on-site-in-city-and-near-city-resettlement-1604",
+      date: "August 11, 2025",
+      url:"https://www.gmanetwork.com/news/topstories/nation/955504/schools-urged-to-report-bullying-cases-by-cwc/story/",
     },
-  ],
+    ],
   title = "Related News",
 }: RelatedArticlesProps) => {
   return (
-    <section className="w-full py-12 bg-background">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8">{title}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="w-full py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {articles.map((article) => (
             <Card
               key={article.id}
-              className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer border-0 shadow-lg hover:-translate-y-1"
               onClick={() => window.open(article.url, '_blank')}
             >
               <div className="relative h-48 overflow-hidden">
@@ -95,25 +98,24 @@ const RelatedArticles = ({
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                 />
-                <Badge className="absolute top-3 right-3">
+                <Badge className="absolute top-3 right-3 bg-blue-600 hover:bg-blue-700 border-0">
                   {article.category}
                 </Badge>
               </div>
               <CardContent className="flex-grow pt-6">
-                <CardTitle className="line-clamp-2 mb-2 text-lg">
+                <CardTitle className="line-clamp-2 mb-3 text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200">
                   {article.title}
                 </CardTitle>
-                <CardDescription className="line-clamp-3 text-sm text-muted-foreground">
+                <CardDescription className="line-clamp-3 text-sm text-gray-600 leading-relaxed">
                   {article.description}
                 </CardDescription>
               </CardContent>
-              <CardFooter className="pt-0 pb-4 flex items-center text-sm text-muted-foreground">
-                <div className="flex items-center">
+              <CardFooter className="pt-0 pb-6 flex items-center justify-between text-sm text-gray-500">
+                <div className="flex items-center text-blue-600">
                   <Clock className="h-4 w-4 mr-1" />
-                  <span>{article.readTime} min read</span>
+                  <span className="font-medium">{article.readTime} min read</span>
                 </div>
-                <span className="mx-2">•</span>
-                <span>{article.date}</span>
+                <span className="text-gray-400">{article.date}</span>
               </CardFooter>
             </Card>
           ))}
