@@ -34,7 +34,7 @@ const LatestPostsSidebar = ({
         name: "INQUIRER.net",
         avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
       },
-              url: "https://newsinfo.inquirer.net/2094388/marcos-15-firms-corner-big-flood-control-works?utm_source=(direct)&utm_medium=gallery"
+              url: "https://www.filipinospotlight.online/marcos-15-firms-corner-big-flood-control-works"
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const LatestPostsSidebar = ({
         name: "INQUIRER.net",
         avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
       },
-             url: "https://newsinfo.inquirer.net/2094387/bad-boy-robin-padilla-to-head-senate-ethics-body?utm_source=(direct)&utm_medium=gallery"
+             url: "https://www.filipinospotlight.online/bad-boy-robin-padilla-to-head-senate-ethics-body"
     },
     {
       id: 3,
@@ -60,7 +60,7 @@ const LatestPostsSidebar = ({
         name: "INQUIRER.net",
         avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
       },
-             url: "https://newsinfo.inquirer.net/2094242/marcos-inspects-pasig-marikina-river-channel-improvement-project?utm_source=(direct)&utm_medium=gallery"
+             url: "https://www.filipinospotlight.online/chinese-ships-collide-while-pursuing-ph-vessel"
     },
     {
       id: 4,
@@ -73,7 +73,7 @@ const LatestPostsSidebar = ({
         name: "INQUIRER.net",
         avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
       },
-      url: "https://newsinfo.inquirer.net/2094218/vico-sotto-discayas-own-2-of-top-15-firms-in-govt-flood-control-deals?utm_source=(direct)&utm_medium=gallery"
+             url: "https://www.filipinospotlight.online/vico-sotto-discayas-own-2-of-top-15-firms-in-govt-flood-control-deals"
     },
     {
       id: 5,
@@ -86,7 +86,7 @@ const LatestPostsSidebar = ({
         name: "INQUIRER.net",
         avatar: "https://newsinfo.inquirer.net/wp-content/uploads/2025/08/inquirer-logo.png"
       },
-      url: "https://newsinfo.inquirer.net/2094389/public-urged-to-go-to-presidents-website-for-tips-on-infra-problems",
+             url: "https://www.filipinospotlight.online/public-urged-to-go-to-presidents-website-for-tips-on-infra-problems"
     }
   ]
 }: LatestPostsSidebarProps) => {
@@ -160,9 +160,9 @@ const LatestPostsSidebar = ({
           <h4 className="text-lg font-bold mb-2">
             Stay Informed
           </h4>
-          <p className="text-pink-100 text-sm mb-4">
-            Get the latest Philippine news and police updates from FILIPINO SPOTLIGHT delivered to your inbox.
-          </p>
+                     <p className="text-pink-100 text-sm mb-4">
+             Get the latest Philippine news and updates from FILIPINO SPOTLIGHT delivered to your inbox.
+           </p>
           <button className="w-full bg-white text-pink-600 font-semibold py-2 px-4 rounded-lg hover:bg-pink-50 transition-colors duration-200">
             Subscribe Now
           </button>

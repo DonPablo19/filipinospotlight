@@ -26,7 +26,7 @@ const RelatedArticles = ({
         category: "National",
       readTime: "5 min read",
       publishedDate: "August 12, 2025",
-      url: "https://newsinfo.inquirer.net/2094222/villanueva-i-dont-know-any-senator-linked-to-15-contractors-marcos-named",
+             url: "https://www.filipinospotlight.online/villanueva-i-dont-know-any-senator-linked-to-15-contractors-marcos-named"
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const RelatedArticles = ({
       category: "National",
       readTime: "4 min read",
       publishedDate: "August 12, 2025",
-      url: "https://newsinfo.inquirer.net/2094388/marcos-15-firms-corner-big-flood-control-works?utm_source=(direct)&utm_medium=gallery"
+             url: "https://www.filipinospotlight.online/marcos-15-firms-corner-big-flood-control-works"
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ const RelatedArticles = ({
       category: "National",
       readTime: "3 min read",
       publishedDate: "August 11, 2025",
-      url: "https://newsinfo.inquirer.net/2094242/marcos-inspects-pasig-marikina-river-channel-improvement-project?utm_source=(direct)&utm_medium=gallery"
+             url: "https://www.filipinospotlight.online/marcos-inspects-pasig-marikina-river-channel-improvement-project"
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ const RelatedArticles = ({
       category: "Foreign Relations",
       readTime: "4 min read",
       publishedDate: "August 12, 2025",
-      url: "https://newsinfo.inquirer.net/2094456/fwd-dilg-deploy-barangay-tanods-to-public-schools-nationwide-to-ensure-safety-of-students",
+             url: "https://www.filipinospotlight.online/dilg-deploy-barangay-tanods-to-public-schools-nationwide"
     }
   ]
 }: RelatedArticlesProps) => {
